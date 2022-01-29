@@ -25,4 +25,4 @@ function save.onTime(interval)
         end
 
 save:interval(configManager.getNumber(configKeys.SAVE_INTERVAL_TIME) * 60 * 60 * 1000)
-save:register()
+-- save:register()

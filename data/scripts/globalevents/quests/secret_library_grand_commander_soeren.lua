@@ -32,4 +32,4 @@ function grandCommander.onThink(interval, lastExecution)
 end
 
 grandCommander:interval(900000)
-grandCommander:register()
+-- grandCommander:register()

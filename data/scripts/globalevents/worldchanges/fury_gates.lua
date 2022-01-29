@@ -135,7 +135,7 @@ function furygates.onStartup(interval)
 	return true
 end
 
-furygates:register()
+-- furygates:register()
 
 
 -- FURY GATE TELEPORTS
@@ -181,4 +181,4 @@ end
 teleport:type("stepin")
 teleport:aid(9710, 9715)
 
-teleport:register()
+-- teleport:register()

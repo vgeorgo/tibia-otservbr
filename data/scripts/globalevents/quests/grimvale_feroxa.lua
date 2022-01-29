@@ -115,4 +115,4 @@ function grimVale.onThink(interval, lastExecution)
 	return true
 end
 grimVale:interval(60000)
-grimVale:register()
+-- grimVale:register()

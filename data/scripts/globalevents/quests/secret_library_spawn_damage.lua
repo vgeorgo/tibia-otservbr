@@ -81,4 +81,4 @@ function spawnDamage.onThink(interval)
 end
 
 spawnDamage:interval(9000)
-spawnDamage:register()
+-- spawnDamage:register()

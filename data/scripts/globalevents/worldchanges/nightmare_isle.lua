@@ -34,4 +34,4 @@ function NightmareIsle.onStartup(interval)
 
 	return true
 end
-NightmareIsle:register()
+-- NightmareIsle:register()

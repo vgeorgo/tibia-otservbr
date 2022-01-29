@@ -22,4 +22,4 @@ function pitsOfInfernoBosses.onThink(interval, lastExecution)
 end
 
 pitsOfInfernoBosses:interval(46800000)
-pitsOfInfernoBosses:register()
+-- pitsOfInfernoBosses:register()

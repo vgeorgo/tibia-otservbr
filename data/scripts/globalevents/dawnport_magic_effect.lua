@@ -18,4 +18,4 @@ function dawnportMagicEffect.onThink(interval)
 end
 
 dawnportMagicEffect:interval(5000)
-dawnportMagicEffect:register()
+-- dawnportMagicEffect:register()

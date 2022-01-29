@@ -33,7 +33,7 @@ function rashid.onStartup()
 	return true
 
 end
-rashid:register()
+-- rashid:register()
 
 local rashidSpawnOnTime = GlobalEvent("rashidSpawnOnTime")
 function rashidSpawnOnTime.onTime(interval)
@@ -56,4 +56,4 @@ function rashidSpawnOnTime.onTime(interval)
 
 end
 rashidSpawnOnTime:time("00:01")
-rashidSpawnOnTime:register()
+-- rashidSpawnOnTime:register()

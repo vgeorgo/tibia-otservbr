@@ -31,4 +31,4 @@ function rentedMounts.onThink(interval)
 end
 
 rentedMounts:interval(15000)
-rentedMounts:register()
+-- rentedMounts:register()

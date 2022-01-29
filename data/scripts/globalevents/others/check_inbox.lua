@@ -14,4 +14,4 @@ function checkInbox.onThink(interval, lastExecution)
 end
 
 checkInbox:interval(30000)
-checkInbox:register()
+-- checkInbox:register()

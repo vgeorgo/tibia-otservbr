@@ -27,4 +27,4 @@ function ferumbrasEffect2.onThink(interval)
 end
 
 ferumbrasEffect2:interval(4000)
-ferumbrasEffect2:register()
+-- ferumbrasEffect2:register()

@@ -4,4 +4,4 @@ function hirelingSave.onShutdown()
 	SaveHirelings()
 	return true
 end
-hirelingSave:register()
+-- hirelingSave:register()

@@ -131,4 +131,4 @@ function serverstartup.onStartup()
 	-- Load otservbr-custom map (data/world/custom/otservbr-custom.otbm)
 	loadCustomMap()
 end
-serverstartup:register()
+-- serverstartup:register()

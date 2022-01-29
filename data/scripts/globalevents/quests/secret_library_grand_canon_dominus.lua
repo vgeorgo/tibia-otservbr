@@ -32,4 +32,4 @@ function canonDominus.onThink(interval, lastExecution)
 end
 
 canonDominus:interval(900000)
-canonDominus:register()
+-- canonDominus:register()

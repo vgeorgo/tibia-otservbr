@@ -70,4 +70,4 @@ function spawnsByTime.onPeriodChange(period, light)
 	return true
 end
 
-spawnsByTime:register()
+-- spawnsByTime:register()

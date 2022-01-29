@@ -23,4 +23,4 @@ function update.onStartup()
 	end
 	return true
 end
-update:register()
+-- update:register()

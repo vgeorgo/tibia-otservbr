@@ -11,7 +11,7 @@ if configManager.getBoolean(configKeys.WEATHER_RAIN) then
 		return true
 	end
 
-	weatherStartup:register()
+	-- weatherStartup:register()
 
 	local weather = GlobalEvent("Weather")
 
@@ -26,7 +26,7 @@ if configManager.getBoolean(configKeys.WEATHER_RAIN) then
 	end
 
 	weather:interval(200000) -- how often to randomize rain / weather
-	weather:register()
+	-- weather:register()
 
 	local weatherRain = GlobalEvent("WeatherRain")
 
@@ -46,5 +46,5 @@ if configManager.getBoolean(configKeys.WEATHER_RAIN) then
 	end
 
 	weatherRain:interval(50) -- less rain = greater value
-	weatherRain:register()
+	-- weatherRain:register()
 end

@@ -6,4 +6,4 @@ function guildWar.onThink(interval)
 end
 
 guildWar:interval(100000)
-guildWar:register()
+-- guildWar:register()

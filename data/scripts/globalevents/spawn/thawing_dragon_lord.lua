@@ -31,4 +31,4 @@ function thawingDragonLord.onThink(interval, lastExecution)
     return true
 end
 thawingDragonLord:interval(900000)
-thawingDragonLord:register()
+-- thawingDragonLord:register()

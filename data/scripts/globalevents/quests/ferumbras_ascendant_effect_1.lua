@@ -28,4 +28,4 @@ function ferumbrasEffect1.onThink(interval)
 end
 
 ferumbrasEffect1:interval(3000)
-ferumbrasEffect1:register()
+-- ferumbrasEffect1:register()
