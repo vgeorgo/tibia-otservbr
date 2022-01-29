@@ -1,6 +1,65 @@
 local house = {
   builtItems = {
-    {position = Position(1014, 1021, 7), groundId = 9022, itemId = 1027}
+    -- GROUND
+    {position = Position(1003, 1016, 7), groundId = nil, itemId = 1027},
+    {position = Position(1004, 1016, 7), groundId = nil, itemId = 1026},
+    {position = Position(1005, 1016, 7), groundId = nil, itemId = 1026},
+    {position = Position(1006, 1016, 7), groundId = nil, itemId = 1026},
+    {position = Position(1007, 1016, 7), groundId = nil, itemId = 1026},
+
+    {position = Position(1003, 1017, 7), groundId = nil, itemId = 1025},
+    {position = Position(1004, 1017, 7), groundId = 9067, itemId = nil},
+    {position = Position(1005, 1017, 7), groundId = 9067, itemId = nil},
+    {position = Position(1006, 1017, 7), groundId = 9067, itemId = nil},
+    {position = Position(1007, 1017, 7), groundId = nil, itemId = 6441},
+
+    {position = Position(1003, 1018, 7), groundId = nil, itemId = 1025},
+    {position = Position(1004, 1018, 7), groundId = 9067, itemId = nil},
+    {position = Position(1005, 1018, 7), groundId = 9067, itemId = nil},
+    {position = Position(1006, 1018, 7), groundId = 9067, itemId = nil},
+    {position = Position(1007, 1018, 7), groundId = nil, itemId = 6441},
+
+    {position = Position(1003, 1019, 7), groundId = nil, itemId = 1025},
+    {position = Position(1004, 1019, 7), groundId = nil, itemId = 1026},
+    {position = Position(1005, 1019, 7), groundId = nil, itemId = 5098},
+    {position = Position(1006, 1019, 7), groundId = nil, itemId = 1026},
+    {position = Position(1007, 1019, 7), groundId = nil, itemId = 1029},
+
+    -- ROOF
+    {position = Position(1002, 1015, 8), groundId = nil, itemId = 5161},
+    {position = Position(1003, 1015, 8), groundId = nil, itemId = 5165},
+    {position = Position(1004, 1015, 8), groundId = nil, itemId = 5165},
+    {position = Position(1005, 1015, 8), groundId = nil, itemId = 5165},
+    {position = Position(1006, 1015, 8), groundId = nil, itemId = 5165},
+    {position = Position(1007, 1015, 8), groundId = nil, itemId = 5162},
+
+    {position = Position(1002, 1016, 8), groundId = nil, itemId = 5158},
+    {position = Position(1003, 1016, 8), groundId = nil, itemId = 5160},
+    {position = Position(1004, 1016, 8), groundId = nil, itemId = 5160},
+    {position = Position(1005, 1016, 8), groundId = nil, itemId = 5160},
+    {position = Position(1006, 1016, 8), groundId = nil, itemId = 5160},
+    {position = Position(1007, 1016, 8), groundId = nil, itemId = 5167},
+
+    {position = Position(1002, 1017, 8), groundId = nil, itemId = 5158},
+    {position = Position(1003, 1017, 8), groundId = nil, itemId = 5160},
+    {position = Position(1004, 1017, 8), groundId = nil, itemId = 5160},
+    {position = Position(1005, 1017, 8), groundId = nil, itemId = 5160},
+    {position = Position(1006, 1017, 8), groundId = nil, itemId = 5160},
+    {position = Position(1007, 1017, 8), groundId = nil, itemId = 5167},
+
+    {position = Position(1002, 1018, 8), groundId = nil, itemId = 5158},
+    {position = Position(1003, 1018, 8), groundId = nil, itemId = 5160},
+    {position = Position(1004, 1018, 8), groundId = nil, itemId = 5160},
+    {position = Position(1005, 1018, 8), groundId = nil, itemId = 5160},
+    {position = Position(1006, 1018, 8), groundId = nil, itemId = 5160},
+    {position = Position(1007, 1018, 8), groundId = nil, itemId = 5167},
+
+    {position = Position(1002, 1019, 8), groundId = nil, itemId = 5164},
+    {position = Position(1003, 1019, 8), groundId = nil, itemId = 5166},
+    {position = Position(1004, 1019, 8), groundId = nil, itemId = 5166},
+    {position = Position(1005, 1019, 8), groundId = nil, itemId = 5166},
+    {position = Position(1006, 1019, 8), groundId = nil, itemId = 5166},
+    {position = Position(1007, 1019, 8), groundId = nil, itemId = 5163}
   },
 	burntItems = {
     {position = Position(1014, 1021, 7), itemId = nil}
@@ -29,11 +88,11 @@ function testhouse.onStartup(interval)
 			tile = Tile(tileConfig.position)
       ground = tile:getGround();
 
-      if not tile or not ground then
-        Spdlog.info(string.format("CUSTOM (test_house) - Failed to create tile %s, ground: %s", tile, ground))
+      if not tile then
+        Spdlog.info(string.format("CUSTOM (test_house) - Failed to create tile %s", tile))
       else
-        ground:transform(tileConfig.groundId)
-        Game.createItem(tileConfig.itemId, 1, tileConfig.position)
+        if tileConfig.groundId and ground then ground:transform(tileConfig.groundId) end
+        if tileConfig.itemId then Game.createItem(tileConfig.itemId, 1, tileConfig.position) end
       end
 		end
 	end
