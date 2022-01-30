@@ -26,40 +26,40 @@ local house = {
     {position = Position(1007, 1019, 7), groundId = nil, itemId = 1029},
 
     -- ROOF
-    {position = Position(1002, 1015, 8), groundId = nil, itemId = 5161},
-    {position = Position(1003, 1015, 8), groundId = nil, itemId = 5165},
-    {position = Position(1004, 1015, 8), groundId = nil, itemId = 5165},
-    {position = Position(1005, 1015, 8), groundId = nil, itemId = 5165},
-    {position = Position(1006, 1015, 8), groundId = nil, itemId = 5165},
-    {position = Position(1007, 1015, 8), groundId = nil, itemId = 5162},
+    {position = Position(1003, 1016, 6), groundId = nil, itemId = 5161},
+    {position = Position(1004, 1016, 6), groundId = nil, itemId = 5165},
+    {position = Position(1005, 1016, 6), groundId = nil, itemId = 5165},
+    {position = Position(1006, 1016, 6), groundId = nil, itemId = 5165},
+    {position = Position(1007, 1016, 6), groundId = nil, itemId = 5165},
+    {position = Position(1008, 1016, 6), groundId = nil, itemId = 5162},
 
-    {position = Position(1002, 1016, 8), groundId = nil, itemId = 5158},
-    {position = Position(1003, 1016, 8), groundId = nil, itemId = 5160},
-    {position = Position(1004, 1016, 8), groundId = nil, itemId = 5160},
-    {position = Position(1005, 1016, 8), groundId = nil, itemId = 5160},
-    {position = Position(1006, 1016, 8), groundId = nil, itemId = 5160},
-    {position = Position(1007, 1016, 8), groundId = nil, itemId = 5167},
+    {position = Position(1003, 1017, 6), groundId = nil, itemId = 5158},
+    {position = Position(1004, 1017, 6), groundId = nil, itemId = 5160},
+    {position = Position(1005, 1017, 6), groundId = nil, itemId = 5160},
+    {position = Position(1006, 1017, 6), groundId = nil, itemId = 5160},
+    {position = Position(1007, 1017, 6), groundId = nil, itemId = 5160},
+    {position = Position(1008, 1017, 6), groundId = nil, itemId = 5167},
 
-    {position = Position(1002, 1017, 8), groundId = nil, itemId = 5158},
-    {position = Position(1003, 1017, 8), groundId = nil, itemId = 5160},
-    {position = Position(1004, 1017, 8), groundId = nil, itemId = 5160},
-    {position = Position(1005, 1017, 8), groundId = nil, itemId = 5160},
-    {position = Position(1006, 1017, 8), groundId = nil, itemId = 5160},
-    {position = Position(1007, 1017, 8), groundId = nil, itemId = 5167},
+    {position = Position(1003, 1018, 6), groundId = nil, itemId = 5158},
+    {position = Position(1004, 1018, 6), groundId = nil, itemId = 5160},
+    {position = Position(1005, 1018, 6), groundId = nil, itemId = 5160},
+    {position = Position(1006, 1018, 6), groundId = nil, itemId = 5160},
+    {position = Position(1007, 1018, 6), groundId = nil, itemId = 5160},
+    {position = Position(1008, 1018, 6), groundId = nil, itemId = 5167},
 
-    {position = Position(1002, 1018, 8), groundId = nil, itemId = 5158},
-    {position = Position(1003, 1018, 8), groundId = nil, itemId = 5160},
-    {position = Position(1004, 1018, 8), groundId = nil, itemId = 5160},
-    {position = Position(1005, 1018, 8), groundId = nil, itemId = 5160},
-    {position = Position(1006, 1018, 8), groundId = nil, itemId = 5160},
-    {position = Position(1007, 1018, 8), groundId = nil, itemId = 5167},
+    {position = Position(1003, 1019, 6), groundId = nil, itemId = 5158},
+    {position = Position(1004, 1019, 6), groundId = nil, itemId = 5160},
+    {position = Position(1005, 1019, 6), groundId = nil, itemId = 5160},
+    {position = Position(1006, 1019, 6), groundId = nil, itemId = 5160},
+    {position = Position(1007, 1019, 6), groundId = nil, itemId = 5160},
+    {position = Position(1008, 1019, 6), groundId = nil, itemId = 5167},
 
-    {position = Position(1002, 1019, 8), groundId = nil, itemId = 5164},
-    {position = Position(1003, 1019, 8), groundId = nil, itemId = 5166},
-    {position = Position(1004, 1019, 8), groundId = nil, itemId = 5166},
-    {position = Position(1005, 1019, 8), groundId = nil, itemId = 5166},
-    {position = Position(1006, 1019, 8), groundId = nil, itemId = 5166},
-    {position = Position(1007, 1019, 8), groundId = nil, itemId = 5163}
+    {position = Position(1003, 1020, 6), groundId = nil, itemId = 5164},
+    {position = Position(1004, 1020, 6), groundId = nil, itemId = 5166},
+    {position = Position(1005, 1020, 6), groundId = nil, itemId = 5166},
+    {position = Position(1006, 1020, 6), groundId = nil, itemId = 5166},
+    {position = Position(1007, 1020, 6), groundId = nil, itemId = 5166},
+    {position = Position(1008, 1020, 6), groundId = nil, itemId = 5163}
   },
 	burntItems = {
     {position = Position(1014, 1021, 7), itemId = nil}
@@ -85,12 +85,13 @@ function testhouse.onStartup(interval)
 		local tile, ground, tileConfig
     for i = 1, #house.builtItems do
       tileConfig = house.builtItems[i]
-			tile = Tile(tileConfig.position)
-      ground = tile:getGround();
+			tile = Tile(tileConfig.position) or Game.createTile(tileConfig.position)
 
       if not tile then
         Spdlog.info(string.format("CUSTOM (test_house) - Failed to create tile %s", tile))
       else
+        ground = tile:getGround();
+
         if tileConfig.groundId and ground then ground:transform(tileConfig.groundId) end
         if tileConfig.itemId then Game.createItem(tileConfig.itemId, 1, tileConfig.position) end
       end
